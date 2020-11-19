@@ -16,7 +16,13 @@ config :te, Te.Repo,
 # you can enable the server option below.
 config :te, TeWeb.Endpoint,
   http: [port: 4002],
-  server: false
+  server: true
 
-# Print only warnings and errors during test
+# Print only warnings and errors during test.
 config :logger, level: :warn
+
+# Only use Ecto's sandbox in tests.
+config :te, :sql_sandbox, true
+
+# Use Wallaby Chrome instead of Selenium.
+config :wallaby, driver: Wallaby.Chrome
